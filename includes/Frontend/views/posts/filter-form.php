@@ -1,4 +1,5 @@
 <form action="<?php echo $url ?>" method="post">
+
     <table class="form-table">
         <tr>
             <th scope="row">
@@ -8,7 +9,9 @@
                 <select name="numberposts" id="numberposts">
                     <option disabled="true" selected>Select</option>
                     <?php for ($i = 1; $i <= $total_post; $i++) { ?>
-                        <option value="<?php echo $i ?>"><?php echo $i ?></option>
+                        <option value="<?php echo $i ?>" <?php if (isset($_POST['numberposts']) && $_POST['numberposts'] == $i) { ?> selected <?php } ?>>
+                            <?php echo $i ?>
+                        </option>
                     <?php } ?>
                 </select>
             </th>
@@ -20,8 +23,12 @@
             <th scope="row">
                 <select name="order" id="order">
                     <option disabled="true" selected>select</option>
-                    <option value="ASC">Ascending</option>
-                    <option value="DESC">Descending</option>
+                    <option value="ASC" <?php if (isset($_POST['order']) && $_POST['order'] === 'ASC') { ?> selected <?php } ?>>
+                        Ascending
+                    </option>
+                    <option value="DESC" <?php if (isset($_POST['order']) && $_POST['order'] === 'DESC') { ?> selected <?php } ?>>
+                        Descending
+                    </option>
                 </select>
             </th>
         </tr>
@@ -31,10 +38,12 @@
             </th>
             <th scope="row">
                 <?php foreach ($terms as $term) { ?>
-                    <input type="checkbox" name="category[]" id="category" value="<?php echo $term->term_id; ?>"> <?php echo $term->name; ?><br />
+                    <input type="checkbox" name="category[]" id="category" value="<?php echo $term->term_id; ?>" <?php if (isset($_POST['category']) && in_array($term->term_id, $_POST['category'])) { ?> checked <?php } ?> />
+                    <?php echo $term->name; ?><br />
                 <?php } ?>
             </th>
         </tr>
     </table>
-    <button type="submit" class="submit" id="submit" name="mrhpe-submit">Submit</button>
+    <button type="submit" name="mrhpe-submit">Submit</button>
+    <button type="button" name="mrhpe-reset" id="mrhpe-reset" onclick="window.location.href = window.location.href">Reset</button>
 </form>

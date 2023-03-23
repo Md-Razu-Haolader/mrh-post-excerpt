@@ -12,31 +12,19 @@
 	float: right;
 }
 
-.mrhpe-box {
+.wppv-box {
 	display: flex;
 	align-items: baseline;
 	align-content: center;
 	text-align: center;
 }
 
-.mrhpe-a {
+.wppv-a {
 	color: rgb(22, 82, 105);
 	text-decoration: none;
 }
 
-.mrhpe-a:hover {
+.wppv-a:hover {
 	color: rgb(175, 26, 26);
 	text-decoration: underline;
-}
-
-button#submit:hover {
-	color: rgb(56, 46, 46);
-	font-weight: bold;
-}
-
-button#submit {
-	color: rgb(196, 47, 47);
-	background-color: rgb(230, 230, 230);
-	text-decoration: none;
-	border-radius: 6px;
 }
