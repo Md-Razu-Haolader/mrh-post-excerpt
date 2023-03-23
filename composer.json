@@ -1,0 +1,19 @@
+{
+    "name": "razu/posts-excerpt",
+    "description": "A plugin to show post excerpt, view count of each post and shortcode for frontend functionality.",
+    "type": "wordpress-plugin",
+    "license": "GPL v2",
+    "authors": [
+        {
+            "name": "Md. Razu Haolader",
+            "email": "razu.cse129@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "MRH\\PostExcerpt\\": "includes/"
+        }
+    }
+}
