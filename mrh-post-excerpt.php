@@ -15,7 +15,7 @@ declare(strict_types=1);
  * Text Domain:       posts-view
  * 
  * 
- * Copyright (c) 2020 Md. Razu Haolader (razu.cse129@gmail.com). All rights reserved.
+ * Copyright (c) 2023 Md. Razu Haolader (razu.cse129@gmail.com). All rights reserved.
  * 
  * This program is a free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
