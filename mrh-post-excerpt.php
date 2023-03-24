@@ -12,7 +12,7 @@ declare(strict_types=1);
  * Author URI:        https://www.linkedin.com/in/md-razu-haolader/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       posts-view
+ * Text Domain:       posts-excerpt
  * 
  * 
  * Copyright (c) 2023 Md. Razu Haolader (razu.cse129@gmail.com). All rights reserved.
