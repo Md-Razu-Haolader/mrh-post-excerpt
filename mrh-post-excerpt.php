@@ -46,10 +46,10 @@ define('MRHPE_PATH', __DIR__);
  *
  * @return PostExcerpt
  */
-function posts_view(): PostExcerpt
+function post_excerpt(): PostExcerpt
 {
     return PostExcerpt::instance();
 }
 
 //kick off the plugin
-posts_view();
+post_excerpt();
