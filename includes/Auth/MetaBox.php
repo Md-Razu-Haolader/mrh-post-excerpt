@@ -6,7 +6,7 @@ class MetaBox
 {
 
     private $post_excerpt_meta_key;
-    function __construct()
+    public function __construct()
     {
         add_action('add_meta_boxes', [$this, 'add']);
         add_action('save_post', [$this, 'save']);
