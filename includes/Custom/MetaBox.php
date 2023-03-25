@@ -43,11 +43,11 @@ class MetaBox
      */
     public function save(int $post_id): void
     {
-        if (array_key_exists('mrhpe-metabox', $_POST)) {
+        if (isset($_POST['mrhpe_metabox']) && !empty($_POST['mrhpe_metabox'])) {
             update_post_meta(
                 $post_id,
                 $this->post_excerpt_meta_key,
-                wp_kses_post(esc_html($_POST['mrhpe-metabox']))
+                wp_kses_post(esc_html($_POST['mrhpe_metabox']))
             );
         }
     }
@@ -64,7 +64,7 @@ class MetaBox
         $excerpt = get_post_meta($post->ID, $this->post_excerpt_meta_key, true);
 
 ?>
-        <textarea name="mrhpe-metabox" id="mrhpe-metabox" class="mrhpe-metabox" cols="100" rows="10"><?php echo $excerpt; ?></textarea>
+        <textarea name="mrhpe_metabox" id="mrhpe-metabox" class="mrhpe-metabox" cols="100" rows="10"><?php echo $excerpt; ?></textarea>
 <?php
     }
 }

@@ -44,6 +44,6 @@
             </th>
         </tr>
     </table>
-    <button type="submit" name="mrhpe-submit">Submit</button>
-    <button type="button" name="mrhpe-reset" id="mrhpe-reset" onclick="window.location.href = window.location.href">Reset</button>
+    <button type="submit" name="mrhpe_submit">Submit</button>
+    <button type="button" name="mrhpe_reset" id="mrhpe-reset" onclick="window.location.href = window.location.href">Reset</button>
 </form>

@@ -61,7 +61,7 @@ class Shortcode
         $order_by     = isset($atts['order']) ? 'meta_value_num' : '';
         $meta_key     = isset($atts['order']) ? MRHPE_VIEW_COUNT_KEY : '';
 
-        if (isset($_POST['mrhpe-submit'])) {
+        if (isset($_POST['mrhpe_submit'])) {
             $number_posts = isset($_POST['numberposts']) ? $_POST['numberposts'] : $number_posts;
             $order        = isset($_POST['order']) ? $_POST['order']            : $order;
             $order_by     = isset($_POST['order']) ? 'meta_value_num'           : $order_by;
