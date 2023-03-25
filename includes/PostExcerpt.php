@@ -86,7 +86,7 @@ final class PostExcerpt
     {
         new Assets();
         new Frontend();
-        new Auth();
+        new Custom();
         if (is_admin()) {
             new Admin();
         }
