@@ -4,19 +4,14 @@ declare(strict_types=1);
 
 namespace MRH\PostExcerpt;
 
-/**
- * Auth handler class
- */
 class Auth
 {
 
-    /**
-     * Auth class constructor
-     */
+
     public function __construct()
     {
         if ($this->has_user_edit_permission()) {
-            new Auth\MetaBox();
+            new Custom\MetaBox();
         }
     }
     private function has_user_edit_permission(): bool

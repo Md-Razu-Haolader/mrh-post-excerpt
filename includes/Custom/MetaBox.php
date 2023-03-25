@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MRH\PostExcerpt\Auth;
+namespace MRH\PostExcerpt\Custom;
 
 class MetaBox
 {

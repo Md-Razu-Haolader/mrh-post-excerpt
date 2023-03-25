@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace MRH\PostExcerpt;
 
-use MRH\PostExcerpt\Activator;
-use MRH\PostExcerpt\Frontend;
-use MRH\PostExcerpt\Admin;
-use MRH\PostExcerpt\Assets;
-
 final class PostExcerpt
 {
     /**
@@ -90,10 +85,10 @@ final class PostExcerpt
     public function init_classes(): void
     {
         new Assets();
+        new Frontend();
+        new Auth();
         if (is_admin()) {
             new Admin();
-        } else {
-            new Frontend();
         }
     }
 }
