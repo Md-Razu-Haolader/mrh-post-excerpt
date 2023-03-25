@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MRH\PostExcerpt\Frontend;
 
 use MRH\PostExcerpt\Helpers\Template;
@@ -19,11 +21,11 @@ class Shortcode
      * Renders shortcode
      *
      * @param array $atts
-     * @param string $content
+     * @param array|string $content
      * 
      * @return string
      */
-    public function render_post_view_shortcode($atts, $content = '')
+    public function render_post_view_shortcode(array|string $atts, string $content = ''): string
     {
         global $wp;
         $atts = is_array($atts) ? $atts : [];

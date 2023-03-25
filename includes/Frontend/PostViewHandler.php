@@ -9,6 +9,7 @@ use MRH\PostExcerpt\Helpers\Common;
 class PostViewHandler
 {
     private string $view_count_meta_key;
+
     public function __construct()
     {
         $this->view_count_meta_key = MRHPE_VIEW_COUNT_KEY;

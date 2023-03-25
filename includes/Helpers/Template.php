@@ -6,7 +6,7 @@ namespace MRH\PostExcerpt\Helpers;
 
 class Template
 {
-    public static function render(string $filePath, $data = [])
+    public static function render(string $filePath, array $data = []): void
     {
         if (file_exists($filePath)) {
             extract($data);

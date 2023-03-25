@@ -14,10 +14,6 @@ class Admin
     public function __construct()
     {
         new PostColumnCustomizer();
-        if (is_user_logged_in()) {
-            if (current_user_can('edit_posts')) {
-                new Auth();
-            }
-        }
+        new Auth();
     }
 }

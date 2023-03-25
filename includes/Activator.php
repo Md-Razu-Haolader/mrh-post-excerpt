@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MRH\PostExcerpt;
 
 /**
@@ -13,7 +15,7 @@ class Activator
      *
      * @return void
      */
-    public function run()
+    public function run(): void
     {
         $this->add_plugin_info();
     }
@@ -23,7 +25,7 @@ class Activator
      *
      * @return void
      */
-    public function add_plugin_info()
+    public function add_plugin_info(): void
     {
         $activated = get_option('mrhpe_installation_time');
 

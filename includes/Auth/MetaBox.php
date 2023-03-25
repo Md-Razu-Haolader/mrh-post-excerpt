@@ -1,11 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace MRH\PostExcerpt\Auth;
 
 class MetaBox
 {
 
     private $post_excerpt_meta_key;
+
     public function __construct()
     {
         add_action('add_meta_boxes', [$this, 'add']);
