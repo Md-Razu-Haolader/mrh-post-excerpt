@@ -7,7 +7,7 @@ namespace MRH\PostExcerpt;
 use MRH\PostExcerpt\Activator;
 use MRH\PostExcerpt\Frontend;
 use MRH\PostExcerpt\Admin;
-
+use MRH\PostExcerpt\Assets;
 
 final class PostExcerpt
 {
@@ -69,7 +69,6 @@ final class PostExcerpt
     {
         register_activation_hook(__FILE__, [$this, 'activate']);
         add_action('plugins_loaded', [$this, 'init_classes']);
-        add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
     }
 
     /**
@@ -90,20 +89,11 @@ final class PostExcerpt
      */
     public function init_classes(): void
     {
+        new Assets();
         if (is_admin()) {
             new Admin();
         } else {
             new Frontend();
         }
-    }
-
-    /**
-     * Includes the stylesheet
-     *
-     * @return void
-     */
-    public function enqueue_scripts(): void
-    {
-        wp_enqueue_style('mrhpe-styles', MRHPE_ASSETS . '/css/style.css', '', MRHPE_VERSION);
     }
 }

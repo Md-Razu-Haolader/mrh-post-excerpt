@@ -27,6 +27,7 @@ class Shortcode
      */
     public function render_post_view_shortcode(array|string $atts, string $content = ''): string
     {
+        wp_enqueue_style('mrhpe-style');
         global $wp;
         $atts = is_array($atts) ? $atts : [];
         $defaultValues = $this->get_default_values($atts);
