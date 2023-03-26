@@ -69,13 +69,13 @@ class Shortcode
             $category     = isset($_POST['category']) ? $_POST['category']      : $category;
         }
 
-        return array(
+        return [
             'numberposts'  => $number_posts,
             'category__in' => $category,
             'orderby'      => $order_by,
             'order'        => $order,
             'meta_key'     => $meta_key,
-        );
+        ];
     }
 
     private function get_selected_post_ids(array $atts): array
@@ -102,9 +102,9 @@ class Shortcode
 
     private function get_terms(): array
     {
-        return get_terms(array(
+        return get_terms([
             'taxonomy'   => 'category',
             'hide_empty' => false,
-        ));
+        ]);
     }
 }
