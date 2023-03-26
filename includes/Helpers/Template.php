@@ -10,7 +10,7 @@ class Template
     {
         if (file_exists($filePath)) {
             extract($data);
-            require_once $filePath;
+            require $filePath;
         } else {
             throw new \RuntimeException('View file not found');
         }
