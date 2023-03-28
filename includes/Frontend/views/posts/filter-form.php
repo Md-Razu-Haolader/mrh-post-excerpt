@@ -9,7 +9,7 @@
                 <select name="numberposts" id="numberposts">
                     <option disabled="true" selected>Select</option>
                     <?php for ( $i = 1; $i <= $total_post; ++$i ) { ?>
-                        <option value="<?php echo $i; ?>" <?php if ( isset( $_POST['numberposts'] ) && $_POST['numberposts'] === $i ) { ?> selected <?php } ?>>
+                        <option value="<?php echo $i; ?>" <?php if ( isset( $_POST['numberposts'] ) && (int) $_POST['numberposts'] === $i ) { ?> selected <?php } ?>>
                             <?php echo $i; ?>
                         </option>
                     <?php } ?>
@@ -38,7 +38,7 @@
             </th>
             <th scope="row">
                 <?php foreach ( $terms as $term ) { ?>
-                    <input type="checkbox" name="category[]" id="category" value="<?php echo $term->term_id; ?>" <?php if ( isset( $_POST['category'] ) && in_array( $term->term_id, $_POST['category'], true ) ) { ?> checked <?php } ?> />
+                    <input type="checkbox" name="category[]" id="category" value="<?php echo $term->term_id; ?>" <?php if ( isset( $_POST['category'] ) && in_array( $term->term_id, $_POST['category'], false ) ) { ?> checked <?php } ?> />
                     <?php echo $term->name; ?><br />
                 <?php } ?>
             </th>
