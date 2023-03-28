@@ -6,10 +6,9 @@ namespace MRH\PostExcerpt;
 
 use MRH\PostExcerpt\Admin\PostColumnCustomizer;
 
-class Admin
-{
-    public function __construct()
-    {
+class Admin {
+
+    public function __construct() {
         new PostColumnCustomizer();
     }
 }

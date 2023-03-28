@@ -33,7 +33,7 @@ if ( !defined( 'ABSPATH' ) ) {
     exit;
 }
 
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 use MRH\PostExcerpt\PostExcerpt;
 
@@ -42,8 +42,7 @@ define( 'MRHPE_PATH', __DIR__ );
 /**
  * Initializes the main plugin.
  */
-function post_excerpt(): PostExcerpt
-{
+function post_excerpt(): PostExcerpt {
     return PostExcerpt::instance();
 }
 

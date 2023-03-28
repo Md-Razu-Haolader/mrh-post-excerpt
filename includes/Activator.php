@@ -7,21 +7,19 @@ namespace MRH\PostExcerpt;
 /**
  * Plugin activator class.
  */
-class Activator
-{
+class Activator {
+
     /**
      * Runs the activator.
      */
-    public function run(): void
-    {
+    public function run(): void {
         $this->add_plugin_info();
     }
 
     /**
      * Adds plugin info.
      */
-    public function add_plugin_info(): void
-    {
+    public function add_plugin_info(): void {
         $activated = get_option( 'mrhpe_installation_time' );
 
         if ( !$activated ) {

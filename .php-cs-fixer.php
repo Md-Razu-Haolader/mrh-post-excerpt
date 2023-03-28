@@ -19,7 +19,6 @@ return (new PhpCsFixer\Config())
     ->setUsingCache(false)
     ->setRules([
         ...WeDevs\Fixer\Fixer::rules(),
-        '@Symfony' => true,
         'no_alternative_syntax' => true,
         'strict_comparison' => true,
         'strict_param' => true,

@@ -4,12 +4,11 @@ declare( strict_types=1 );
 
 namespace MRH\PostExcerpt\Custom;
 
-class MetaBox
-{
+class MetaBox {
+
     private $post_excerpt_meta_key;
 
-    public function __construct()
-    {
+    public function __construct() {
         add_action( 'add_meta_boxes', [$this, 'add'] );
         add_action( 'save_post', [$this, 'save'] );
         $this->post_excerpt_meta_key = 'mrhpe-post-excerpt';
@@ -18,9 +17,9 @@ class MetaBox
     /**
      * Adds custom meta box.
      */
-    public function add(): void
-    {
+    public function add(): void {
         $screens = ['post', 'wporg_cpt'];
+
         foreach ( $screens as $screen ) {
             add_meta_box(
                 'mrhpe_metabox',
@@ -34,8 +33,7 @@ class MetaBox
     /**
      * Saves the meta box value in the database.
      */
-    public function save( int $post_id ): void
-    {
+    public function save( int $post_id ): void {
         if ( isset( $_POST['mrhpe_metabox'] ) && !empty( $_POST['mrhpe_metabox'] ) ) {
             update_post_meta(
                 $post_id,
@@ -48,8 +46,7 @@ class MetaBox
     /**
      * Renders the HTML field.
      */
-    public function render( object $post ): void
-    {
+    public function render( object $post ): void {
         $excerpt = get_post_meta( $post->ID, $this->post_excerpt_meta_key, true );
 
         ?>

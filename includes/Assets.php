@@ -4,10 +4,9 @@ declare( strict_types=1 );
 
 namespace MRH\PostExcerpt;
 
-class Assets
-{
-    public function __construct()
-    {
+class Assets {
+
+    public function __construct() {
         add_action( 'wp_enqueue_scripts', [$this, 'register_assets'] );
     }
 
@@ -16,13 +15,12 @@ class Assets
      *
      * @return object
      */
-    public function get_styles()
-    {
+    public function get_styles() {
         return [
             'mrhpe-style' => [
-                'src' => MRHPE_ASSETS.'/css/style.css',
-                'version' => filemtime( MRHPE_PATH.'/assets/css/style.css' ),
-                'deps' => false,
+                'src'     => MRHPE_ASSETS . '/css/style.css',
+                'version' => filemtime( MRHPE_PATH . '/assets/css/style.css' ),
+                'deps'    => false,
             ],
         ];
     }
@@ -32,9 +30,9 @@ class Assets
      *
      * @return void
      */
-    public function register_assets()
-    {
+    public function register_assets() {
         $styles = $this->get_styles();
+
         foreach ( $styles as $handle => $style ) {
             wp_register_style( $handle, $style['src'], $style['deps'], $style['version'] );
         }
