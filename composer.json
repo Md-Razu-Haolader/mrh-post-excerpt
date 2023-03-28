@@ -10,10 +10,37 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
     "autoload": {
         "psr-4": {
             "MRH\\PostExcerpt\\": "includes/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MRH\\PostExcerpt\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2"
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "dev-develop",
+        "phpcompatibility/phpcompatibility-wp": "dev-master",
+        "friendsofphp/php-cs-fixer": "^3.12",
+        "tareq1988/wp-php-cs-fixer": "dev-master",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
+        "phpunit/phpunit": "^9.5",
+        "yoast/phpunit-polyfills": "1.x-dev"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "phpunit": "./vendor/bin/phpunit --testdox",
+        "fix-cs": "php-cs-fixer fix",
+        "test-cs": "php-cs-fixer fix --dry-run -v",
+        "test": ["@phpunit", "@test-cs"]
     }
 }

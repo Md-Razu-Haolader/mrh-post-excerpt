@@ -1,51 +1,44 @@
 <?php
 
-
-declare(strict_types=1);
+declare( strict_types=1 );
 
 namespace MRH\PostExcerpt\Helpers;
 
 class Common
 {
     /**
-     * Emphasize texts with <em> tag
+     * Emphasize texts with <em> tag.
      *
      * @param mixed $value
      * @param mixed $extension
-     * 
-     * @return string
      */
-    public static function emphasize_text($value, $extension = null): string
+    public static function emphasize_text( $value, $extension = null ): string
     {
         ob_start();
 
-?>
+        ?>
         <em><?php echo "$value $extension"; ?></em>
 <?php
 
-        $result = ob_get_clean();
+                $result = ob_get_clean();
+
         return $result;
     }
 
     /**
-     * makes custom post excerps from post
-     *
-     * @param object $post
-     * @param int $length
-     * 
-     * @return string
+     * makes custom post excerps from post.
      */
-    public static function custom_excerpt(object $post, int $length = 200): string
+    public static function custom_excerpt( object $post, int $length = 200 ): string
     {
-        if ($post->post_excerpt != '') {
+        if ( $post->post_excerpt !== '' ) {
             $excerpt = $post->post_excerpt;
         } else {
-            $excerpt = strip_tags($post->post_content);
+            $excerpt = strip_tags( $post->post_content );
         }
 
-        if (strlen($excerpt)  > $length) {
-            $excerpt  = substr($excerpt, 0, $length);
-            $excerpt .= ' . . .<a href="' . get_permalink($post) . '"><em>continue reading</em></a>';
+        if ( strlen( $excerpt ) > $length ) {
+            $excerpt = substr( $excerpt, 0, $length );
+            $excerpt .= ' . . .<a href="'.get_permalink( $post ).'"><em>continue reading</em></a>';
         }
 
         return $excerpt;

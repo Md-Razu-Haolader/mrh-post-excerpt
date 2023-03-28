@@ -1,19 +1,16 @@
 <?php
 
-declare(strict_types=1);
+declare( strict_types=1 );
 
 namespace MRH\PostExcerpt;
 
 /**
- * Plugin activator class
+ * Plugin activator class.
  */
 class Activator
 {
-
     /**
-     * Runs the activator
-     *
-     * @return void
+     * Runs the activator.
      */
     public function run(): void
     {
@@ -21,18 +18,16 @@ class Activator
     }
 
     /**
-     * Adds plugin info
-     *
-     * @return void
+     * Adds plugin info.
      */
     public function add_plugin_info(): void
     {
-        $activated = get_option('mrhpe_installation_time');
+        $activated = get_option( 'mrhpe_installation_time' );
 
-        if (!$activated) {
-            update_option('mrhpe_installation_time', time());
+        if ( !$activated ) {
+            update_option( 'mrhpe_installation_time', time() );
         }
 
-        update_option('mrhpe_version', MRHPE_VERSION);
+        update_option( 'mrhpe_version', MRHPE_VERSION );
     }
 }
