@@ -2,7 +2,7 @@
 
 declare( strict_types=1 );
 
-namespace MRH\PostExcerpt\Tests;
+namespace MRH\PostExcerpt\Tests\Unit;
 
 use MRH\PostExcerpt\Helpers\Template as TemplateHelper;
 use RuntimeException;
